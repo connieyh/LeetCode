@@ -2,12 +2,10 @@ public class RomanToInteger {
     public int romanToInt(String s) {
         int sum = convert(s.charAt(0));
         for(int i=1; i<s.length(); i++) {
-            if(convert(s.charAt(i)) <= convert(s.charAt(i-1))) {
-                sum += convert(s.charAt(i));
-            }else {
+            if(convert(s.charAt(i)) > convert(s.charAt(i-1))) {
                 sum -= 2*convert(s.charAt(i-1));
-                sum += convert(s.charAt(i));
             }
+            sum += convert(s.charAt(i));
         }
         return sum;
     }

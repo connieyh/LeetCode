@@ -1,0 +1,1 @@
+Typical three pointer practice
